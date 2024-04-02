@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+    background: url('cherry-blossoms-bg.jpg'); /* Add your background image URL */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.greeting-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Space for image slider */
+}
+
+h1 {
+    color: #D32F2F;
+    font-size: 2em;
+    animation: fadeIn 2s;
+}
+
+p {
+    color: #333;
+    font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Image Slider */
+.image-slider {
+    max-width: 600px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slide {
+    width: 100%;
+    transition: transform 2s ease;
+    display: none;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+#typed-message {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid black; /* Cursor */
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* Cursor Animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}
