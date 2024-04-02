@@ -9,70 +9,88 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-attachment: fixed;
 }
 
 .container {
     text-align: center;
-    padding: 20px;
     max-width: 90%;
+    padding: 20px;
+    animation: fadeIn 2s ease-out;
 }
 
 .greeting-card {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Space for image slider */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Adjusted spacing */
+    animation: scaleIn .5s ease-in-out;
 }
 
-h1 {
-    color: #D32F2F;
-    font-size: 2em;
-    animation: fadeIn 2s;
+/* Grid Layout */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 10px; /* Spacing between images */
+    padding: 20px;
+    animation: gridPopIn 1s ease-in-out;
 }
 
-p {
-    color: #333;
-    font-size: 1.2em;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-/* Image Slider */
-.image-slider {
-    max-width: 600px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.slide {
+.grid-item img {
     width: 100%;
-    transition: transform 2s ease;
-    display: none;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
-/* Typing Animation */
+.grid-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+/* Existing animations and styles continue here... */
+
+@keyframes gridPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensuring all images have the same size */
+.grid-item img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensures images cover the area without losing their aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Enhancements for animations */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
-#typed-message {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid black; /* Cursor */
-    animation: 
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+@keyframes lineGrow {
+    from { height: 0; }
+    to { height: 100%; }
 }
 
-/* Cursor Animation */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: black; }
+#typed-message {
+    overflow: hidden;
+    white-space: normal; /* Allows text to wrap and form a "block" of text */
+    border-right: .15em solid black; /* Simulates a cursor */
+    max-width: 75%; /* Adjust based on your layout preference */
+    height: 0; /* Start height, will expand to fit content */
+    animation: 
+        typing 5s steps(40, end) 1s forwards, 
+        lineGrow 5s ease 1s forwards; /* Updated to include vertical growth */
 }
+
+/* Continue with other styles... */
