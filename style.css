@@ -4,7 +4,7 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
-    background: url('cherry-blossoms-bg.jpg'); /* Add your background image URL */
+    background: url('cherry-blossoms-bg.jpg');
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -14,84 +14,52 @@ body, html {
 
 .container {
     text-align: center;
-    max-width: 90%;
-    padding: 20px;
+    max-width: 90%; /* Optimized for mobile */
+    padding: 15px; /* Slightly less padding for smaller screens */
     animation: fadeIn 2s ease-out;
 }
 
 .greeting-card {
+    
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px; /* Adjusted spacing */
-    margin-top: 20px;
+    border-radius: 10px; /* Slightly less rounded for a softer look on mobile */
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 200px; /* Added top margin for spacing from the top */
+    margin-bottom: 15px; /* Adjusted for smaller screens */
     animation: scaleIn .5s ease-in-out;
+    border: solid;
 }
 
-/* Grid Layout */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 10px; /* Spacing between images */
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Simplified grid for mobile */
+    gap: 5px; /* Reduced gap for closer image grouping */
+    padding: 10px; /* Less padding to maximize screen usage */
     animation: gridPopIn 1s ease-in-out;
 }
 
 .grid-item img {
     width: 100%;
-    height: auto;
-    border-radius: 10px; /* Rounded corners for images */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures that images cover the grid item area */
+    border-radius: 5px; /* Slightly rounded for a soft look */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .grid-item:hover img {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
-}
-
-/* Existing animations and styles continue here... */
-
-@keyframes gridPopIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Ensuring all images have the same size */
-.grid-item img {
-    width: 100%;
-    height: 200px; /* Set a fixed height for all images */
-    object-fit: cover; /* Ensures images cover the area without losing their aspect ratio */
-    border-radius: 10px; /* Rounded corners for images */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
-}
-
-/* Enhancements for animations */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes lineGrow {
-    from { height: 0; }
-    to { height: 100%; }
+    transform: scale(1.03); /* Subtle zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for consistency */
 }
 
 #typed-message {
     overflow: hidden;
-    white-space: normal; /* Allows text to wrap and form a "block" of text */
-    border-right: .15em solid black; /* Simulates a cursor */
-    max-width: 75%; /* Adjust based on your layout preference */
-    height: 0; /* Start height, will expand to fit content */
-    animation: 
-        typing 5s steps(40, end) 1s forwards, 
-        lineGrow 5s ease 1s forwards; /* Updated to include vertical growth */
+    white-space: normal;
+    border-right: .15em solid black;
+    max-width: 7 5%; /* Increased for better mobile readability */
+    min-height: 20px;
+    animation: typing 5s steps(40, end) 1s forwards, lineGrow 5s ease 1s forwards;
+    margin-top: 10px; /* Ensure some space above for separation */
+    border: solid red;
 }
 
-/* Continue with other styles... */
