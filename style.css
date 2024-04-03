@@ -17,19 +17,63 @@ body, html {
     max-width: 90%; /* Optimized for mobile */
     padding: 15px; /* Slightly less padding for smaller screens */
     animation: fadeIn 2s ease-out;
+    
 }
 
+
 .greeting-card {
-    
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px; /* Slightly less rounded for a softer look on mobile */
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 200px; /* Added top margin for spacing from the top */
-    margin-bottom: 15px; /* Adjusted for smaller screens */
-    animation: scaleIn .5s ease-in-out;
+    background-image: linear-gradient(to right top, #ffffff, #ffffff, #f2f2f2, #e6e6e6, #d9d9d9); /* Soft gradient for depth */
+    border-radius: 15px; /* Increased for more pronounced curves */
+    padding: 30px; /* Increased padding for a more spacious layout */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.22); /* Refined shadow for depth */
+    margin: 50px auto; /* Centered with more balanced margin */
+    animation: scaleIn .5s ease-in-out, fadeIn 1.5s ease-out; /* Combined animations for dynamic entrance */
+    border: 1px solid #cccccc; /* Subtle border for definition */
+    max-width: 600px; /* Max width for better reading on large screens */
     border: solid;
+    margin-top: 200px;
 }
+
+/* Adding an Asian flair to typography */
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif JP'), local('Noto Serif SC');
+    /* Ensure you have the correct font files or links to Google Fonts */
+}
+
+/* Enhancing buttons or links with Asian-inspired design */
+button {
+    background-color: #e0a960;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #bf9141;
+}
+
+h1, p {
+    margin: 0 0 10px; /* Reduced spacing for tighter typography */
+    color: #333; /* Darker text for better contrast */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Soft shadow for depth */
+}
+
+h1 {
+    font-size: 2em; /* Larger title for emphasis */
+    font-weight: bold; /* Bold weight for presence */
+}
+
+p {
+    font-size: 1.2em; /* Slightly larger body text for readability */
+    line-height: 1.5; /* Increased line height for readability */
+}
+
 
 .image-grid {
     display: grid;
@@ -60,6 +104,18 @@ body, html {
     min-height: 20px;
     animation: typing 5s steps(40, end) 1s forwards, lineGrow 5s ease 1s forwards;
     margin-top: 10px; /* Ensure some space above for separation */
-    border: solid red;
+    
 }
 
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
