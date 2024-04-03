@@ -1,140 +1,150 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
-    background: url('cherry-blossoms-bg.jpg');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-attachment: fixed;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+  background: url("cherry-blossoms-bg.jpg");
+
+  background: linear-gradient(to bottom, #ff6b6b, #ffd6d6);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
 }
 
 .container {
-    text-align: center;
-    max-width: 90%; /* Optimized for mobile */
-    padding: 15px; /* Slightly less padding for smaller screens */
-    animation: fadeIn 2s ease-out;
-    
+  text-align: center;
+  max-width: 90%; /* Optimized for mobile */
+  padding: 15px; /* Slightly less padding for smaller screens */
+  animation: fadeIn 2s ease-out;
 }
 
 .welcome {
-    width: 400px;
-    height: auto;
-    width: 100%;
-}
-.welcome {
-    max-width: 90%; /* Ensures images are not too wide on larger screens */
-    height: auto; /* Maintains the aspect ratio of the images */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth with a subtle shadow */
-    margin: 20px auto; /* Adds space around the images and centers them */
-    border-radius: 10px; /* Softens the edges with a slight curve */
-    border: 2px solid #e0a960; /* Adds a fine border with a color that matches the theme */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
+  max-width: 100%; /* Ensures images do not overflow the screen width */
+  height: auto; /* Maintains the aspect ratio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle depth */
+  margin: 20px auto; /* Centers the image with vertical spacing */
+  border-radius: 10px; /* Softens the image edges */
+  border: 2px solid #e0a960; /* Adds a fine border */
+  transition: transform 0.3s ease-in-out; /* For interactive hover effect */
 }
 
 .welcome:hover {
-    transform: scale(1.05); /* Slightly enlarges the image on hover for interactivity */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhances the shadow for a lifted effect */
+  transform: scale(
+    1.05
+  ); /* Slightly enlarges the image on hover for interactivity */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhances the shadow for a lifted effect */
 }
 
 .greeting-card {
-    background-color: rgba(255, 255, 255, 0.9);
-    background-image: linear-gradient(to right top, #ffffff, #ffffff, #f2f2f2, #e6e6e6, #d9d9d9); /* Soft gradient for depth */
-    border-radius: 15px; /* Increased for more pronounced curves */
-    padding: 30px; /* Increased padding for a more spacious layout */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.22); /* Refined shadow for depth */
-    margin: 50px auto; /* Centered with more balanced margin */
-    animation: scaleIn .5s ease-in-out, fadeIn 1.5s ease-out; /* Combined animations for dynamic entrance */
-    border: 1px solid #cccccc; /* Subtle border for definition */
-    max-width: 600px; /* Max width for better reading on large screens */
-    border: solid;
-    margin-top: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: linear-gradient(
+    to right top,
+    #ffffff,
+    #ffffff,
+    #f2f2f2,
+    #e6e6e6,
+    #d9d9d9
+  ); /* Soft gradient for depth */
+  border-radius: 15px; /* Increased for more pronounced curves */
+  padding: 30px; /* Increased padding for a more spacious layout */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.22); /* Refined shadow for depth */
+  margin: 50px auto; /* Centered with more balanced margin */
+  animation: scaleIn 0.5s ease-in-out, fadeIn 1.5s ease-out; /* Combined animations for dynamic entrance */
+  border: 1px solid #cccccc; /* Subtle border for definition */
+  max-width: 600px; /* Max width for better reading on large screens */
+  border: solid;
+  margin-top: 200px;
+  border: 1px solid #FFD6D6
 }
 
 /* Adding an Asian flair to typography */
 @font-face {
-    font-family: 'Noto Serif';
-    src: local('Noto Serif JP'), local('Noto Serif SC');
-    /* Ensure you have the correct font files or links to Google Fonts */
+  font-family: "Noto Serif";
+  src: local("Noto Serif JP"), local("Noto Serif SC");
+  /* Ensure you have the correct font files or links to Google Fonts */
 }
 
-/* Enhancing buttons or links with Asian-inspired design */
+
+
 button {
-    background-color: #e0a960;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
+  background-color: #ff6b6b; /* Coral Pink for emphasis */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #bf9141;
+  background-color: #e55a5a; /* A slightly darker shade for the hover effect */
 }
 
-h1, p {
-    margin: 0 0 10px; /* Reduced spacing for tighter typography */
-    color: #333; /* Darker text for better contrast */
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Soft shadow for depth */
+h1,
+p {
+  margin: 0 0 10px; /* Reduced spacing for tighter typography */
+  color: #333; /* Darker text for better contrast */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Soft shadow for depth */
 }
 
 h1 {
-    font-size: 2em; /* Larger title for emphasis */
-    font-weight: bold; /* Bold weight for presence */
+  font-size: 2em; /* Larger title for emphasis */
+  font-weight: bold; /* Bold weight for presence */
 }
 
 p {
-    font-size: 1.2em; /* Slightly larger body text for readability */
-    line-height: 1.5; /* Increased line height for readability */
+  font-size: 1.2em; /* Slightly larger body text for readability */
+  line-height: 1.5; /* Increased line height for readability */
 }
 
-
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Simplified grid for mobile */
-    gap: 5px; /* Reduced gap for closer image grouping */
-    padding: 10px; /* Less padding to maximize screen usage */
-    animation: gridPopIn 1s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Simplified grid for mobile */
+  gap: 5px; /* Reduced gap for closer image grouping */
+  padding: 10px; /* Less padding to maximize screen usage */
+  animation: gridPopIn 1s ease-in-out;
 }
 
 .grid-item img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Ensures that images cover the grid item area */
-    border-radius: 5px; /* Slightly rounded for a soft look */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures that images cover the grid item area */
+  border-radius: 5px; /* Slightly rounded for a soft look */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .grid-item:hover img {
-    transform: scale(1.03); /* Subtle zoom effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for consistency */
+  transform: scale(1.03); /* Subtle zoom effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for consistency */
 }
 
 #typed-message {
-    overflow: hidden;
-    white-space: normal;
-    border-right: .15em solid black;
-    max-width: 7 5%; /* Increased for better mobile readability */
-    min-height: 20px;
-    animation: typing 5s steps(40, end) 1s forwards, lineGrow 5s ease 1s forwards;
-    margin-top: 10px; /* Ensure some space above for separation */
-    
+  overflow: hidden;
+  white-space: normal;
+  border-right: 0.15em solid black;
+  max-width: 7 5%; /* Increased for better mobile readability */
+  min-height: 20px;
+  animation: typing 5s steps(40, end) 1s forwards, lineGrow 5s ease 1s forwards;
+  margin-top: 10px; /* Ensure some space above for separation */
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .fade-in {
-    animation: fadeInAnimation 1s forwards;
+  animation: fadeInAnimation 1s forwards;
 }
 
 @keyframes fadeInAnimation {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
