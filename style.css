@@ -49,7 +49,7 @@ html {
     #e6e6e6,
     #d9d9d9
   ); /* Soft gradient for depth */
-  border-radius: 15px; /* Increased for more pronounced curves */
+  border-radius: 15px; /* Incvased for more pronounced curves */
   padding: 30px; /* Increased padding for a more spacious layout */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.22); /* Refined shadow for depth */
   margin: 50px auto; /* Centered with more balanced margin */
@@ -61,6 +61,9 @@ html {
   border: 1px solid #FFD6D6
 }
 
+#revealButton {
+    margin-top: 20px;
+}
 /* Adding an Asian flair to typography */
 @font-face {
   font-family: "Noto Serif";
@@ -91,6 +94,57 @@ button {
 
 button:hover {
   background-color: #e55a5a; /* A slightly darker shade for the hover effect */
+}
+.audio-player {
+    width: 300px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:  0 auto;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.play-pause, .volume-control {
+    background: #444;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.volume-control {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.volume-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.volume-control::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
 }
 
 h1,

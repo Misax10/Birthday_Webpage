@@ -16,8 +16,21 @@
             <h1>Happy Birthday!</h1>
             <p>May your year be filled with joy and prosperity.</p>
             <p>Wishing you all the best on your special day!</p>
+            <div class="audio-player">
+                <audio id="backgroundMusic" loop>
+                    <source src="dat g.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="controls">
+                    <button class="play-pause">Play</button>
+                    <input type="range" class="volume-control" min="0" max="1" step="0.1" value="0.5">
+                </div>
+            </div>
+            
             <button id="revealButton">Click to open your present</button>
         </div>
+        
+        
         <div id="typed-message" class="hidden"></div>
          <!-- The following section will be initially hidden -->
         <div class="image-grid hidden">
