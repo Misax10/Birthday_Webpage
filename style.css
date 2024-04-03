@@ -20,6 +20,25 @@ body, html {
     
 }
 
+.welcome {
+    width: 400px;
+    height: auto;
+    width: 100%;
+}
+.welcome {
+    max-width: 90%; /* Ensures images are not too wide on larger screens */
+    height: auto; /* Maintains the aspect ratio of the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth with a subtle shadow */
+    margin: 20px auto; /* Adds space around the images and centers them */
+    border-radius: 10px; /* Softens the edges with a slight curve */
+    border: 2px solid #e0a960; /* Adds a fine border with a color that matches the theme */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
+}
+
+.welcome:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover for interactivity */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhances the shadow for a lifted effect */
+}
 
 .greeting-card {
     background-color: rgba(255, 255, 255, 0.9);

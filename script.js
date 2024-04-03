@@ -1,5 +1,5 @@
 const message =
-  "Chúc cục vàng yêu của anh luôn luôn hạnh phúc mạnh mẽ";
+  "Happy Birthday ny iu dấu của anh.Chúc cục vàng yêu của anh luôn luôn hạnh phúc mạnh mẽ";
 let index = 0;
 const typingSpeed = 80; // Adjust the typing speed in milliseconds
 
