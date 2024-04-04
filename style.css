@@ -188,11 +188,15 @@ p {
 #typed-message {
   overflow: hidden;
   white-space: normal;
-  border-right: 0.15em solid black;
+  border: 0.15em solid black;
   max-width: 7 5%; /* Increased for better mobile readability */
   min-height: 20px;
   animation: typing 5s steps(40, end) 1s forwards, lineGrow 5s ease 1s forwards;
   margin-top: 10px; /* Ensure some space above for separation */
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: beige;
+  padding: 10px;
 }
 
 .hidden {

@@ -1,7 +1,10 @@
-const message =
-  "Happy Birthday ny iu dấu của anh.Mới đây mà đã gần một năm rồi nhanh quá à";
+const message =`
+Happy Birthday ny iu dấu của anh. Mới đây mà đã gần một năm rồi nhanh quá à, 
+cảm ơn người iu luôn ở bên quan tâm, chăm sóc lo lắng cho anh mỗi ngày. Tuổi mới anh chúc ny có tất cả và chúc 2 đứa mình
+sẽ luôn hạnh phúc, mau về chung 1 nhà nha em iu
+`
 let index = 0;
-const typingSpeed = 80; // Adjust the typing speed in milliseconds
+const typingSpeed = 50; // Adjust the typing speed in milliseconds
 
 function typeMessage() {
   if (index < message.length) {
