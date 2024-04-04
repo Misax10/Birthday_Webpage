@@ -1,9 +1,4 @@
-//const message = `
-//Happy Birthday ny iu dấu của anh. Mới đây mà đã gần một năm rồi nhanh quá à,
-//cảm ơn người iu luôn ở bên quan tâm, chăm sóc lo lắng cho anh mỗi ngày. Tuổi mới anh chúc ny có tất cả và chúc 2 đứa mình
-//sẽ luôn hạnh phúc, mau về chung 1 nhà nha em iu
-//`;
-
+// Message content
 const message = `
 Happy Birthday ny iu dấu của anh ❤️. Mới đây mà đã gần một năm rồi, 
 nhanh quá à 🚀, anh cảm ơn người iu luôn ở bên quan tâm, chăm sóc lo lắng 
@@ -11,46 +6,53 @@ cho anh mỗi ngày 🌻. Tuổi mới anh chúc ny có tất cả, thành công
 🎁, gia đình luôn vui vẻ và hoà thuận, ny của anh đạt được nhũng dự định trong tương lai và 
 chúc 2 đứa mình sẽ luôn hạnh phúc, mong trời sẽ thương em thương anh và
 cho đôi mình mau về chung 1 nhà nha em iu 💑🏡 I love you so much ❤️❤️❤️❤️❤️
-
 `;
 
-let index = 0;
+let index = 0; // To keep track of the current character index
 const typingSpeed = 50; // Adjust the typing speed in milliseconds
 
 function typeMessage() {
   if (index < message.length) {
-    document.getElementById("typed-message").innerHTML += message.charAt(index);
+    const typedMessageElement = document.getElementById("typed-message");
+    typedMessageElement.innerHTML += message.charAt(index);
     index++;
-    document.getElementById("typed-message").scrollIntoView({ behavior: "smooth", block: "nearest" });
     setTimeout(typeMessage, typingSpeed);
+
+    // Scroll into view with each new character
+    typedMessageElement.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
   } else {
-    setTimeout(() => {
-      document.getElementById("typed-message").scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 100); // Adding a delay to ensure any dynamic content changes have settled
+    // Once the message is fully typed, scroll it completely into the top of the view if needed
+    document
+      .getElementById("typed-message")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
+    // Wait 1s after the message has been typed before showing the image grid
+    setTimeout(showImageGrid, 1000);
   }
 }
 
-
-document.getElementById("revealButton").addEventListener("click", function () {
-  // Elements selection
-  const typedMessage = document.getElementById("typed-message");
+function showImageGrid() {
   const imageGrid = document.querySelector(".image-grid");
+  imageGrid.classList.remove("hidden");
+  imageGrid.classList.add("fade-in");
+  imageGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
 
-  // Removing the 'hidden' class and adding 'fade-in' with a delay to ensure smooth transition
-  setTimeout(() => {
-    typedMessage.classList.remove("hidden");
-    typedMessage.classList.add("fade-in");
-    imageGrid.classList.remove("hidden");
-    imageGrid.classList.add("fade-in");
+// Event listener for the 'reveal' button
+document.getElementById("revealButton").addEventListener("click", function () {
+  const typedMessage = document.getElementById("typed-message");
 
-    // Initiate the typing effect upon reveal
-    typeMessage();
-  }, 100); // Adjusted delay for better visual effect
+  // Remove the 'hidden' class and start typing the message
+  typedMessage.classList.remove("hidden");
+  typeMessage();
 
   // Hide the button after click
   this.style.display = "none";
 });
 
+// Audio control event listeners
 document.addEventListener("DOMContentLoaded", function () {
   const backgroundMusic = document.getElementById("backgroundMusic");
   const playPauseButton = document.querySelector(".play-pause");
@@ -59,10 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
   playPauseButton.addEventListener("click", function () {
     if (backgroundMusic.paused) {
       backgroundMusic.play();
-      playPauseButton.textContent = "Pause";
+      this.textContent = "Pause";
     } else {
       backgroundMusic.pause();
-      playPauseButton.textContent = "Play";
+      this.textContent = "Play";
     }
   });
 

@@ -35,7 +35,13 @@ html {
   border-radius: 8px; /* Match the video's border-radius */
 }
 
-
+.capcup_video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle depth */
+  border: 2px solid #e0a960; /* Adds a fine border */
+}
 
 
 .welcome {
