@@ -11,43 +11,38 @@ function typeMessage() {
     document.getElementById("typed-message").innerHTML += message.charAt(index);
     index++;
     setTimeout(typeMessage, typingSpeed);
-
-    if (index % 10 === 0) {
-      document
-        .getElementById("typed-message")
-        .scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
   } else {
-    document
-      .getElementById("typed-message")
-      .scrollIntoView({ behavior: "smooth", block: "end" });
+    // Adjusted to ensure the entire greeting card is brought into view after typing completes
+    setTimeout(() => {
+      document.querySelector(".greeting-card").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 1000); // Adding a delay to ensure any dynamic content changes have settled
   }
 }
 
 document.getElementById("revealButton").addEventListener("click", function () {
-  // Select the elements
-  var typedMessage = document.getElementById("typed-message");
-  var imageGrid = document.querySelector(".image-grid");
+  // Elements selection
+  const typedMessage = document.getElementById("typed-message");
+  const imageGrid = document.querySelector(".image-grid");
 
-  // Use setTimeout to allow the display change to take effect
+  // Removing the 'hidden' class and adding 'fade-in' with a delay to ensure smooth transition
   setTimeout(() => {
     typedMessage.classList.remove("hidden");
     typedMessage.classList.add("fade-in");
-
     imageGrid.classList.remove("hidden");
     imageGrid.classList.add("fade-in");
-  }, 10); // Small delay
+    
+    // Initiate the typing effect upon reveal
+    typeMessage();
+  }, 100); // Adjusted delay for better visual effect
 
-  // Optionally hide the button after click
+  // Hide the button after click
   this.style.display = "none";
-
-  // If you want to initiate the typing effect upon reveal, call the typing function here
-  typeMessage(); // Uncomment if you want the typing effect to start now
 });
+
 document.addEventListener("DOMContentLoaded", function () {
-  var backgroundMusic = document.getElementById("backgroundMusic");
-  var playPauseButton = document.querySelector(".play-pause");
-  var volumeControl = document.querySelector(".volume-control");
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  const playPauseButton = document.querySelector(".play-pause");
+  const volumeControl = document.querySelector(".volume-control");
 
   playPauseButton.addEventListener("click", function () {
     if (backgroundMusic.paused) {
@@ -63,5 +58,3 @@ document.addEventListener("DOMContentLoaded", function () {
     backgroundMusic.volume = this.value;
   });
 });
-
-

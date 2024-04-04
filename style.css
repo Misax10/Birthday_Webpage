@@ -5,14 +5,10 @@ html {
   width: 100%;
   height: 100%;
   font-family: "Lobster", cursive;
-  background: url("cherry-blossoms-bg.jpg");
-
-  background: linear-gradient(to bottom, #ff6b6b, #ffd6d6);
+  background: linear-gradient(to bottom, #ff6b6b, #ff6b6b);
   background-size: cover;
-  display: flex;
   justify-content: center;
   align-items: center;
-  background-attachment: fixed;
 }
 
 .container {
@@ -39,20 +35,17 @@ html {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhances the shadow for a lifted effect */
   opacity: 0.9;
   outline: none; /* Removes the default focus outline */
-    box-shadow: 0 0 0 2px #e0a960; /* Adds a glow effect for focus */
-    transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 0 0 2px #e0a960; /* Adds a glow effect for focus */
+  transform: scale(1.05) rotate(2deg);
 }
-
 
 .greeting-card {
   background-color: rgba(255, 255, 255, 0.9);
   background-image: linear-gradient(
     to right top,
-    #ffffff,
-    #ffffff,
-    #f2f2f2,
-    #e6e6e6,
-    #d9d9d9
+    rgba(255, 235, 235, 0.9),
+    /* Light coral */ rgba(255, 215, 215, 0.6)
+      /* Soft pink that complements the coral */
   ); /* Soft gradient for depth */
   border-radius: 15px; /* Incvased for more pronounced curves */
   padding: 30px; /* Increased padding for a more spacious layout */
@@ -62,13 +55,13 @@ html {
   border: 1px solid #cccccc; /* Subtle border for definition */
   max-width: 600px; /* Max width for better reading on large screens */
   border: solid;
-  margin-top: 200px;
   border: 1px solid #ffd6d6;
 }
 
 #revealButton {
   margin-top: 20px;
   font-family: "Lobster", cursive;
+  font-size: 20px;
 }
 /* Adding an Asian flair to typography */
 @font-face {
@@ -202,7 +195,6 @@ p {
 }
 
 #typed-message {
-  overflow: hidden;
   white-space: normal;
   border: 0.15em solid black;
   max-width: 7 5%; /* Increased for better mobile readability */
@@ -270,4 +262,7 @@ p {
   /* Other styles remain unchanged */
   /*animation: scaleIn 1.5s ease-in-out forwards, fadeIn 2s ease-out forwards; */
   animation: rotateScaleFadeIn 1s ease forwards;
+  scroll-margin-top: 100px;
 }
+
+
