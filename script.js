@@ -1,8 +1,22 @@
+//const message = `
+//Happy Birthday ny iu dấu của anh. Mới đây mà đã gần một năm rồi nhanh quá à, 
+//cảm ơn người iu luôn ở bên quan tâm, chăm sóc lo lắng cho anh mỗi ngày. Tuổi mới anh chúc ny có tất cả và chúc 2 đứa mình
+//sẽ luôn hạnh phúc, mau về chung 1 nhà nha em iu
+//`;
+
 const message = `
-Happy Birthday ny iu dấu của anh. Mới đây mà đã gần một năm rồi nhanh quá à, 
-cảm ơn người iu luôn ở bên quan tâm, chăm sóc lo lắng cho anh mỗi ngày. Tuổi mới anh chúc ny có tất cả và chúc 2 đứa mình
-sẽ luôn hạnh phúc, mau về chung 1 nhà nha em iu
+Happy Birthday ny iu dấu của anh ❤️. Mới đây mà đã gần một năm rồi, 
+nhanh quá à 🚀, cảm ơn người iu luôn ở bên quan tâm, chăm sóc lo lắng 
+cho anh mỗi ngày 🌻. Tuổi mới anh chúc ny có tất cả, thành công trong sự nghiệp 
+🎁, gia đình luôn vui vẻ nhiếu sức khoẻ, ny của anh đạt được nhũng dự định trong tương lai và 
+chúc 2 đứa mình 
+sẽ luôn hạnh phúc, mau về chung 1 nhà nha em iu 💑🏡. Khi bên nhau, mình 
+luôn cảm thấy ấm áp và vui vẻ, như những quãng thời gian được nâng 
+niu trong lòng bàn tay 🤲💖. Hãy luôn giữ vững niềm tin và bước đi bên 
+nhau trên mọi nẻo đường của cuộc đời, nhé 🌈. Anh yêu em, hôm nay và 
+mãi mãi sau này. 💕✨
 `;
+
 let index = 0;
 const typingSpeed = 50; // Adjust the typing speed in milliseconds
 
