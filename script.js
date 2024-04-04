@@ -14,22 +14,17 @@ const typingSpeed = 50; // Adjust the typing speed in milliseconds
 function typeMessage() {
   if (index < message.length) {
     const typedMessageElement = document.getElementById("typed-message");
-    typedMessageElement.innerHTML += message.charAt(index);
+    typedMessageElement.textContent += message.charAt(index);
     index++;
     setTimeout(typeMessage, typingSpeed);
 
     // Scroll into view with each new character
-    typedMessageElement.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-    });
+    typedMessageElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
   } else {
-    // Once the message is fully typed, scroll it completely into the top of the view if needed
-    document
-      .getElementById("typed-message")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
+    // Once the message is fully typed, scroll it completely into the top of the view
+    typedMessageElement.scrollIntoView({ behavior: "smooth", block: "start" });
     // Wait 1s after the message has been typed before showing the image grid
-    setTimeout(showImageGrid, 1000);
+    setTimeout(showImageGrid, 100);
   }
 }
 
@@ -37,20 +32,37 @@ function showImageGrid() {
   const imageGrid = document.querySelector(".image-grid");
   imageGrid.classList.remove("hidden");
   imageGrid.classList.add("fade-in");
+  // Scroll the image grid into view
   imageGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 // Event listener for the 'reveal' button
 document.getElementById("revealButton").addEventListener("click", function () {
-  const typedMessage = document.getElementById("typed-message");
-
-  // Remove the 'hidden' class and start typing the message
-  typedMessage.classList.remove("hidden");
-  typeMessage();
+  // Select the video element
+  const birthdayVideo = document.getElementById("birthdayVideo");
 
   // Hide the button after click
   this.style.display = "none";
+
+  // Show and play the video and scroll into view
+  birthdayVideo.classList.remove("hidden");
+  birthdayVideo.play();
+  birthdayVideo.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  // When the video ends, show and start typing the message
+  birthdayVideo.onended = function () {
+    showMessage();
+  };
 });
+
+// Function to show the message after the video has finished playing
+function showMessage() {
+  const typedMessageContainer = document.getElementById("typed-message");
+  typedMessageContainer.classList.remove("hidden");
+  typeMessage();
+  // Scroll the typed message into view at the top of the screen
+  typedMessageContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 // Audio control event listeners
 document.addEventListener("DOMContentLoaded", function () {
