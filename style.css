@@ -4,7 +4,7 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   background: url("cherry-blossoms-bg.jpg");
 
   background: linear-gradient(to bottom, #ff6b6b, #ffd6d6);
@@ -29,15 +29,20 @@ html {
   margin: 20px auto; /* Centers the image with vertical spacing */
   border-radius: 10px; /* Softens the image edges */
   border: 2px solid #e0a960; /* Adds a fine border */
-  transition: transform 0.3s ease-in-out; /* For interactive hover effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .welcome:hover {
   transform: scale(
-    1.05
+    1.05 rotate(20deg)
   ); /* Slightly enlarges the image on hover for interactivity */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhances the shadow for a lifted effect */
+  opacity: 0.9;
+  outline: none; /* Removes the default focus outline */
+    box-shadow: 0 0 0 2px #e0a960; /* Adds a glow effect for focus */
+    transform: scale(1.05) rotate(2deg);
 }
+
 
 .greeting-card {
   background-color: rgba(255, 255, 255, 0.9);
@@ -58,11 +63,12 @@ html {
   max-width: 600px; /* Max width for better reading on large screens */
   border: solid;
   margin-top: 200px;
-  border: 1px solid #FFD6D6
+  border: 1px solid #ffd6d6;
 }
 
 #revealButton {
-    margin-top: 20px;
+  margin-top: 20px;
+  font-family: "Lobster", cursive;
 }
 /* Adding an Asian flair to typography */
 @font-face {
@@ -72,15 +78,24 @@ html {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-30px);}
-    60% {transform: translateY(-15px);}
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
   }
-  
-  .greeting-card h1 {
-    animation: bounce 1s ease;
+  40% {
+    transform: translateY(-30px);
   }
-  
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.greeting-card h1 {
+  animation: bounce 1s ease-in-out 3;
+}
 
 button {
   background-color: #ff6b6b; /* Coral Pink for emphasis */
@@ -96,55 +111,56 @@ button:hover {
   background-color: #e55a5a; /* A slightly darker shade for the hover effect */
 }
 .audio-player {
-    width: 300px;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin:  0 auto;
+  width: 300px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.play-pause, .volume-control {
-    background: #444;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+.play-pause,
+.volume-control {
+  background: #444;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .volume-control {
-    -webkit-appearance: none;
-    width: 100px;
-    height: 5px;
-    border-radius: 5px;
+  -webkit-appearance: none;
+  width: 100px;
+  height: 5px;
+  border-radius: 5px;
 }
 
 .volume-control::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
 }
 
 .volume-control::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
 }
 
 h1,
@@ -204,7 +220,7 @@ p {
 }
 
 .fade-in {
-  animation: fadeInAnimation 1s forwards;
+  animation: fadeInAnimation 5s forwards;
 }
 
 @keyframes fadeInAnimation {
@@ -214,4 +230,44 @@ p {
   to {
     opacity: 1;
   }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rotateScaleFadeIn {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.greeting-card {
+  /* Other styles remain unchanged */
+  /*animation: scaleIn 1.5s ease-in-out forwards, fadeIn 2s ease-out forwards; */
+  animation: rotateScaleFadeIn 1s ease forwards;
 }

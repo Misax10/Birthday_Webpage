@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birthday Wishes</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="greeting-card">
-            <img class="welcome" src="Pink Colorful Cute Happy birthday Card (1).png">
-            <img class="welcome" src="Pink Colorful Cute Happy birthday Card.png">
-            <h1>Happy Birthday!</h1>
-            <p>May your year be filled with joy and prosperity.</p>
-            <p>Wishing you all the best on your special day!</p>
-            <div class="audio-player">
-                <audio id="backgroundMusic" loop>
-                    <source src="dat g.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-                <div class="controls">
-                    <button class="play-pause">Play</button>
-                    <input type="range" class="volume-control" min="0" max="1" step="0.1" value="0.5">
-                </div>
-            </div>
-            
-            <button id="revealButton">Click to open your present</button>
+      <div class="greeting-card">
+        <img
+          class="welcome"
+          src="Pink Colorful Cute Happy birthday Card (1).png"
+          alt="Happy Birthday Card 1"
+          tabindex="0"
+        />
+        <img
+          class="welcome"
+          src="Pink Colorful Cute Happy birthday Card.png"
+          alt="Happy Birthday Card 2"
+          tabindex="0"
+        />
+        <h1>Happy Birthday!</h1>
+        <p>May your year be filled with joy and prosperity.</p>
+        <p>Wishing you all the best on your special day!</p>
+        <div class="audio-player">
+          <audio id="backgroundMusic" loop>
+            <source src="dat g.mp3" type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio>
+          <div class="controls">
+            <button class="play-pause">Play</button>
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.1"
+              value="0.5"
+            />
+          </div>
         </div>
-        
-        
-        <div id="typed-message" class="hidden"></div>
-         <!-- The following section will be initially hidden -->
-        <div class="image-grid hidden">
-            <div class="grid-item"><img src="cc1.jpeg" alt="Memory 1"></div>
-            <div class="grid-item"><img src="cc2.jpeg" alt="Memory 2"></div>
-            <!-- Add more images as needed -->
-            <div class="grid-item"><img src="cc3.jpeg" alt="Memory 3"></div>
-            <div class="grid-item"><img src="cc4.jpeg" alt="Memory 4"></div>
-            <div class="grid-item"><img src="cc5.jpeg" alt="Memory 5"></div>
-            <div class="grid-item"><img src="cc6.jpeg" alt="Memory 6"></div>
-            <div class="grid-item"><img src="cc7.jpeg" alt="Memory 7"></div>
-            <div class="grid-item"><img src="cc8.jpeg" alt="Memory 8"></div>
-        </div>
-       
+
+        <button id="revealButton">Click vô đây nà ny iu</button>
+      </div>
+
+      <div id="typed-message" class="hidden"></div>
+      <!-- The following section will be initially hidden -->
+      <div class="image-grid hidden">
+        <div class="grid-item"><img src="cc1.jpeg" alt="Memory 1" /></div>
+        <div class="grid-item"><img src="cc2.jpeg" alt="Memory 2" /></div>
+        <!-- Add more images as needed -->
+        <div class="grid-item"><img src="cc3.jpeg" alt="Memory 3" /></div>
+        <div class="grid-item"><img src="cc4.jpeg" alt="Memory 4" /></div>
+        <div class="grid-item"><img src="cc5.jpeg" alt="Memory 5" /></div>
+        <div class="grid-item"><img src="cc6.jpeg" alt="Memory 6" /></div>
+        <div class="grid-item"><img src="cc7.jpeg" alt="Memory 7" /></div>
+        <div class="grid-item"><img src="cc8.jpeg" alt="Memory 8" /></div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
