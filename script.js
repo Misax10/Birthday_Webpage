@@ -5,7 +5,8 @@ nhanh quá à 🚀, anh cảm ơn người iu luôn ở bên quan tâm, chăm s�
 cho anh mỗi ngày 🌻. Tuổi mới anh chúc ny có tất cả, thành công trong sự nghiệp, công việc
 🎁, gia đình luôn vui vẻ và hoà thuận, ny của anh đạt được nhũng dự định trong tương lai và 
 chúc 2 đứa mình sẽ luôn hạnh phúc, mong trời sẽ thương em thương anh và
-cho đôi mình mau về chung 1 nhà nha em iu 💑🏡 I love you so much ❤️❤️❤️❤️❤️
+cho đôi mình mau về chung 1 nhà nha em iu 💑🏡 I love you so much and I'd love to spent my life with you PS:
+Ký tên from : AKCC của QMCC
 `;
 
 let index = 0; // To keep track of the current character index
@@ -14,12 +15,15 @@ const typingSpeed = 50; // Adjust the typing speed in milliseconds
 function typeMessage() {
   if (index < message.length) {
     const typedMessageElement = document.getElementById("typed-message");
-    typedMessageElement.textContent += message.charAt(index);
+    typedMessageElement.innerHTML += message.charAt(index);
     index++;
     setTimeout(typeMessage, typingSpeed);
 
     // Scroll into view with each new character
-    typedMessageElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    typedMessageElement.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
   } else {
     // Once the message is fully typed, scroll it completely into the top of the view
     typedMessageElement.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -30,41 +34,45 @@ function typeMessage() {
 
 function showImageGrid() {
   const imageGrid = document.querySelector(".image-grid");
-  imageGrid.classList.remove("hidden");
-  imageGrid.classList.add("fade-in");
-  // Scroll the image grid into view
-  imageGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  if (imageGrid) {
+    // Check if the imageGrid exists
+    imageGrid.classList.remove("hidden");
+    imageGrid.classList.add("fade-in");
+    imageGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
 }
 
-// Event listener for the 'reveal' button
+function showMessage() {
+  const typedMessageContainer = document.getElementById("typed-message");
+
+  typedMessageContainer.classList.remove("hidden");
+
+  // Start playing background music as the message appears
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  backgroundMusic.play();
+
+  // Scroll the message into view and start typing
+  typedMessageContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+  typeMessage();
+  setTimeout(showImageGrid, 5000);
+}
+
 document.getElementById("revealButton").addEventListener("click", function () {
-  // Select the video element
   const birthdayVideo = document.getElementById("birthdayVideo");
 
-  // Hide the button after click
+  // Hide the button
   this.style.display = "none";
 
-  // Show and play the video and scroll into view
+  // Show, play, and scroll the video into view
   birthdayVideo.classList.remove("hidden");
   birthdayVideo.play();
   birthdayVideo.scrollIntoView({ behavior: "smooth", block: "start" });
 
-  // When the video ends, show and start typing the message
-  birthdayVideo.onended = function () {
-    showMessage();
-  };
+  // After the video, show the message
+  birthdayVideo.onended = showMessage;
 });
 
-// Function to show the message after the video has finished playing
-function showMessage() {
-  const typedMessageContainer = document.getElementById("typed-message");
-  typedMessageContainer.classList.remove("hidden");
-  typeMessage();
-  // Scroll the typed message into view at the top of the screen
-  typedMessageContainer.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-// Audio control event listeners
+// Controls for background music and volume
 document.addEventListener("DOMContentLoaded", function () {
   const backgroundMusic = document.getElementById("backgroundMusic");
   const playPauseButton = document.querySelector(".play-pause");
